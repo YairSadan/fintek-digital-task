@@ -1,0 +1,62 @@
+.logo {
+    margin-left: -49px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 49px;
+}
+
+.prompt {
+    margin-top: 121px;
+    margin-right: 160px;
+    text-align: left;
+    font: normal normal 300 30px/44px Heebo;
+    color: #707070;
+}
+.title {
+    margin-top: 50px;
+    margin-left: 12px;
+    font: normal normal 300 16px/22px Heebo;
+}
+
+.inputContainer {
+    position: relative;
+    margin-top: 7px;
+}
+
+.searchButton {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #046B3B 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font: normal normal 300 18px/27px Heebo;
+    height: 36px;
+    width: 95px;
+}
+
+.searchButton:hover {
+    opacity: 0.8;
+}
+
+.input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: 0px;
+    height: 63px;
+    width: 100%;
+    font-size: larger;
+    padding-left: 12px;
+}
+.footer {
+    margin-top: auto;
+    font: normal normal 300 14px/22px Heebo;
+    color: #707070;
+}
