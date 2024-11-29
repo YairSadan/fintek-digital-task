@@ -1,0 +1,36 @@
+
+.hourlyForecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 35px;
+    margin-top: auto;
+  }
+  
+  
+  .hourContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  .hour {
+    font: normal normal 300 18px/22px Heebo;
+    color: #A8C6CB;
+  }
+  
+  .hourTemp {
+    font: normal normal 500 18px/22px Heebo;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+  }
+  
+  
+  .celsiusSmall {
+    width: 4px;
+    height: 4px;
+    border: 1px solid #EFEFEF;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 10px;
+  }

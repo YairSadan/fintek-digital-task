@@ -1,0 +1,26 @@
+.mainInfo {
+    text-align: center;
+    padding: 100px;
+  }
+  
+  .temperature {
+    font: normal normal 500 130px/130px Heebo;
+    letter-spacing: -16.9px;
+    color: #ffffff;
+  }
+  
+  .celsiusBig {
+    width: 30px;
+    height: 30px;
+    border: 10px solid #EFEFEF;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 85px;
+    margin-left:3px ;
+  }
+  
+  .weather {
+    font: normal normal 300 30px/30px Heebo;
+    color: #e8f1f2;
+    margin-top: -25px;
+  }
