@@ -4,7 +4,6 @@ import "./globals.css";
 
 const heebo = Heebo({
   subsets: ["latin"],
-  weight: ["100", "400", "700", "900"],
 });
 
 export const metadata: Metadata = {
