@@ -57,7 +57,7 @@ const transformWeatherData = (weatherData) => {
 
   return {
     location: {
-      name: weatherData.location.name,
+      name: weatherData.location.region,
       country: weatherData.location.country,
       localtime_epoch: weatherData.location.localtime_epoch,
       lat: weatherData.location.lat.toFixed(2),
