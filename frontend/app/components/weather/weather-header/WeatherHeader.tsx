@@ -18,6 +18,12 @@ export const WeatherHeader: React.FC<WeatherHeaderProps> = ({
       <p className={styles.country}>{country}</p>
       <p className={styles.timeAndDate}>
         {new Date(datetime_epoch * 1000).toLocaleString("en-GB", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        })}
+        {" at "}
+        {new Date(datetime_epoch * 1000).toLocaleString("en-GB", {
           hour: "2-digit",
           minute: "2-digit",
         })}
