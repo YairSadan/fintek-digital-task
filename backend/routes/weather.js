@@ -45,7 +45,7 @@ const transformWeatherData = (weatherData) => {
     .slice(currentHourIndex + 1, currentHourIndex + 6)
     .map((hour) => ({
       time: `${new Date(hour.time).getHours()}:00`,
-      temp_c: hour.temp_c,
+      temp_c: hour.temp_c.toFixed(0),
     }));
 
   return {
@@ -53,15 +53,15 @@ const transformWeatherData = (weatherData) => {
       name: weatherData.location.name,
       country: weatherData.location.country,
       localtime_epoch: weatherData.location.localtime_epoch,
-      lat: weatherData.location.lat,
-      lon: weatherData.location.lon,
+      lat: weatherData.location.lat.toFixed(2),
+      lon: weatherData.location.lon.toFixed(2),
     },
     current: {
-      temp_c: weatherData.current.temp_c,
+      temp_c: weatherData.current.temp_c.toFixed(0),
       condition: weatherData.current.condition.text,
       precipitation: weatherData.current.precip_mm,
       humidity: weatherData.current.humidity,
-      wind_kph: weatherData.current.wind_kph,
+      wind_kph: weatherData.current.wind_kph.toFixed(0),
       last_updated_epoch: weatherData.current.last_updated_epoch,
     },
     forecast: nextFiveHours,

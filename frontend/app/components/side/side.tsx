@@ -43,9 +43,9 @@ const Side = ({ setWeatherData }: SideProps) => {
       </div>
       {location && lastUpdated && (
         <div className={styles.footer}>
-          <span>latitude {Number(location.lat).toFixed(2)}</span>{" "}
+          <span>latitude {location.lat}</span>{" "}
           <span style={{ marginLeft: "20px" }}>
-            longitude {Number(location.lon).toFixed(2)}
+            longitude {location.lon}
           </span>
           <br />
           <span>
