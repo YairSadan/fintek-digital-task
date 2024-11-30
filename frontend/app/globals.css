@@ -1,24 +1,63 @@
 :root {
+  
   background: #F1F1F1 0% 0% no-repeat padding-box;
-  height: 100vh;
-  padding: 54px;
-  max-height: 100vh;
-  overflow: hidden;
+  padding: 3.375rem;
+  min-height: 100vh;
+  min-width: 300px;
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
+
+  /* Font styles */
+  --font-light: normal normal 300;
+  --font-normal: normal normal normal;
+  --font-medium: normal normal 500;
+  
+  /* Font families */
+  --font-family: Heebo;
+  
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-light-gray: #707070;
+  --color-light-blue: #A8C6CB;
+  --color-blue-gray: #e8f1f2;
+  --color-green: #046B3B;
+  --color-teal: #27737d;
+  --color-light-teal: #dde4e6;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
 }
 
 html,
 body {
-  max-width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  font-size: 100%;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 87.5%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 81.25%;
+  }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 * {

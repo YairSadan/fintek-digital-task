@@ -1,21 +1,25 @@
 .header {
-    margin-top: 50px;
+    margin-top: calc(var(--space-xl) * 1.5);
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 768px) {
+      margin-top: var(--space-lg);
+    }
   }
   
   .city {
-    font: normal normal normal 26px/26px Heebo;
-    color: #e8f1f2;
+    font: var(--font-normal) 1.625rem/1.625rem var(--font-family);
+    color: var(--color-blue-gray);
   }
   
   .country {
-    font: normal normal 300 22px/22px Heebo;
-    color: #a8c6cb;
+    font: var(--font-light) 1.375rem/1.375rem var(--font-family);
+    color: var(--color-light-blue);
   }
   
   .timeAndDate {
-    font: normal normal 300 18px/22px Heebo;
-    color: #a8c6cb;
+    font: var(--font-light) 1.125rem/1.375rem var(--font-family);
+    color: var(--color-light-blue);
   }

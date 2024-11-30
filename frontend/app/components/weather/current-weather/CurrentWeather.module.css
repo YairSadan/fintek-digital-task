@@ -1,26 +1,26 @@
 .mainInfo {
     text-align: center;
-    padding: 100px;
-  }
-  
-  .temperature {
-    font: normal normal 500 130px/130px Heebo;
-    letter-spacing: -16.9px;
-    color: #ffffff;
-  }
-  
-  .celsiusBig {
-    width: 30px;
-    height: 30px;
-    border: 10px solid #EFEFEF;
+    padding: var(--space-xl);
+}
+
+.temperature {
+    font: var(--font-medium) 8.125rem/8.125rem var(--font-family);
+    letter-spacing: -0.8rem;
+    color: var(--color-white);
+}
+
+.celsiusBig {
+    width: 1.875rem;
+    height: 1.875rem;
+    border: 0.625rem solid #EFEFEF;
     border-radius: 50%;
     display: inline-block;
-    margin-bottom: 85px;
-    margin-left:3px ;
-  }
-  
-  .weather {
-    font: normal normal 300 30px/30px Heebo;
-    color: #e8f1f2;
-    margin-top: -25px;
-  }
+    margin-bottom: 5.313rem;
+    margin-left: 0.188rem;
+}
+
+.weather {
+    font: var(--font-light) 1.875rem/1.875rem var(--font-family);
+    color: var(--color-blue-gray);
+    margin-top: -1.563rem;
+}
