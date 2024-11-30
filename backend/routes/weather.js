@@ -17,8 +17,15 @@ router.get("/:city", async (req, res, next) => {
       `https://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_API_KEY}&q=${city}&days=1`
     );
 
-    if (!response.ok)
+    if (!response.ok) {
+      const body = await response.json();
+      if (response.status === 400 && body.error.code === 1006) {
+        const error = new Error("City not found");
+        error.status = 404;
+        return next(error);
+      }
       throw new Error(`Weather API error: ${response.statusText}`);
+    }
 
     const weatherData = await response.json();
 
@@ -58,7 +65,7 @@ const transformWeatherData = (weatherData) => {
     },
     current: {
       temp_c: weatherData.current.temp_c.toFixed(0),
-      condition: weatherData.current.condition.text,
+      condition: weatherData.current.condition.text.toLowerCase(),
       precipitation: weatherData.current.precip_mm,
       humidity: weatherData.current.humidity,
       wind_kph: weatherData.current.wind_kph.toFixed(0),
