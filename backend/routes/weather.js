@@ -48,12 +48,24 @@ const transformWeatherData = (weatherData) => {
     (hour) => new Date(hour.time).getHours() === currentHour
   );
 
-  const nextFiveHours = hourlyForecast
-    .slice(currentHourIndex + 1, currentHourIndex + 6)
-    .map((hour) => ({
-      time: `${new Date(hour.time).getHours()}:00`,
-      temp_c: hour.temp_c.toFixed(0),
-    }));
+  let nextFiveHours = [];
+  if (currentHour >= 19) {
+    // Get remaining hours from current day
+    const remainingHours = hourlyForecast.slice(currentHourIndex + 1);
+    // Get hours from next day to complete 5 hours
+    const nextDayHours = weatherData.forecast.forecastday[1].hour.slice(
+      0,
+      5 - remainingHours.length
+    );
+    nextFiveHours = [...remainingHours, ...nextDayHours];
+  } else {
+    nextFiveHours = hourlyForecast.slice(currentHourIndex + 1, currentHourIndex + 6);
+  }
+
+  nextFiveHours = nextFiveHours.map((hour) => ({
+    time: `${new Date(hour.time).getHours()}:00`,
+    temp_c: hour.temp_c.toFixed(0),
+  }));
 
   return {
     location: {
