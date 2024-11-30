@@ -19,8 +19,8 @@ const Side = () => {
         </button>
       </div>
       <div className={styles.footer}>
-        <span>latitude: {}</span> <span>longitude: {}</span> <br />
-        <span>accurate to {}</span> <span>at {}</span>
+        <span>latitude 32.07</span> <span style={{ marginLeft: "20px"}}>longitude 34.76</span><br />
+        <span>accurate to 13/02/2022 at 16:24</span>
       </div>
     </aside>
   );

@@ -12,7 +12,7 @@
 .prompt {
     margin-top: 121px;
     margin-right: 160px;
-    text-align: left;
+    max-width: 300px;
     font: normal normal 300 30px/44px Heebo;
     color: #707070;
 }
@@ -20,6 +20,7 @@
     margin-top: 50px;
     margin-left: 12px;
     font: normal normal 300 16px/22px Heebo;
+    color: #707070;
 }
 
 .inputContainer {
