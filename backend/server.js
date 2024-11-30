@@ -8,6 +8,10 @@ import cors from "cors";
 const port = process.env.PORT || 8000;
 
 const app = express();
+if (!process.env.WEATHER_API_KEY) {
+  console.error("WEATHER_API_KEY is not set");
+  process.exit(1);
+}
 
 // CORS middleware
 app.use(cors({ origin: "http://localhost:3000" }));
