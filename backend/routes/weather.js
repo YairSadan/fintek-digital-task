@@ -52,9 +52,17 @@ const transformWeatherData = (weatherData) => {
     location: {
       name: weatherData.location.name,
       country: weatherData.location.country,
-      localTime: weatherData.location.localtime,
+      localtime_epoch: weatherData.location.localtime_epoch,
       lat: weatherData.location.lat,
       lon: weatherData.location.lon,
+    },
+    current: {
+      temp_c: weatherData.current.temp_c,
+      condition: weatherData.current.condition.text,
+      precipitation: weatherData.current.precip_mm,
+      humidity: weatherData.current.humidity,
+      wind_kph: weatherData.current.wind_kph,
+      last_updated_epoch: weatherData.current.last_updated_epoch,
     },
     forecast: nextFiveHours,
   };
