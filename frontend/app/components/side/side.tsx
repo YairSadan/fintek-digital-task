@@ -57,9 +57,9 @@ const Side = ({ setWeatherData }: SideProps) => {
       <div className={styles.prompt}>
         Use our weather app to see the weather around the world
       </div>
-      <div className={styles.title}>City name</div>
+      <div className={styles.title} id="city-input-label">City name</div>
       <div className={styles.inputContainer}>
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} role="search" aria-label="Weather search by city">
           <input
             className={styles.input}
             type="text"
@@ -67,14 +67,20 @@ const Side = ({ setWeatherData }: SideProps) => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             disabled={isLoading}
+            aria-label="Enter city name"
+            aria-invalid={!!error}
+            aria-describedby={error ? "error-message" : undefined}
+            id="city-input"
           />
           <button
             type="submit"
             className={styles.searchButton}
             disabled={isLoading}
+            aria-label={isLoading ? "Loading weather data" : "Search weather"}
+            aria-busy={isLoading}
           >
             {isLoading ? (
-              <div className={styles.ldsDefault}>
+              <div className={styles.ldsDefault} role="status" aria-label="Loading">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -94,9 +100,9 @@ const Side = ({ setWeatherData }: SideProps) => {
           </button>
         </form>
       </div>
-      {error && <div className={styles.error}>{error}</div>}
+      {error && <div className={styles.error} role="alert" id="error-message">{error}</div>}
       {location && lastUpdated && (
-        <div className={styles.footer}>
+        <div className={styles.footer} role="status" aria-label="Weather location details">
           <span>latitude {location.lat}</span>{" "}
           <span style={{ marginLeft: "20px" }}>longitude {location.lon}</span>
           <br />

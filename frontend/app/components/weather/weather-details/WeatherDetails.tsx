@@ -12,18 +12,22 @@ export const WeatherDetails: React.FC<WeatherDetailsProps> = ({
   windSpeed,
 }) => {
   return (
-    <section className={styles.weatherDetails}>
-      <div className={styles.detail}>
+    <section 
+      className={styles.weatherDetails} 
+      role="region" 
+      aria-label="Weather conditions details"
+    >
+      <div className={styles.detail} aria-label="Precipitation information">
         <span className={styles.label}>precipitation</span>
-        <span className={styles.value}>{precipitation} mm</span>
+        <span className={styles.value} aria-label={`${precipitation} millimeters`}>{precipitation} mm</span>
       </div>
-      <div className={styles.detail}>
+      <div className={styles.detail} aria-label="Humidity information">
         <span className={styles.label}>humidity</span>
-        <span className={styles.value}>{humidity}%</span>
+        <span className={styles.value} aria-label={`${humidity} percent`}>{humidity}%</span>
       </div>
-      <div className={styles.detail}>
+      <div className={styles.detail} aria-label="Wind speed information">
         <span className={styles.label}>wind</span>
-        <span className={styles.value}>{windSpeed} km/h</span>
+        <span className={styles.value} aria-label={`${windSpeed} kilometers per hour`}>{windSpeed} km/h</span>
       </div>
     </section>
   );

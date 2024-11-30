@@ -11,11 +11,13 @@ export const CurrentWeather: React.FC<CurrentWeatherProps> = ({
   condition
 }) => {
   return (
-    <main className={styles.mainInfo}>
-      <div className={styles.temperature}>
-        {temperature}<span className={styles.celsiusBig}></span>
+    <div className={styles.mainInfo} role="region" aria-label="Current weather information">
+      <div className={styles.temperature} aria-label={`Temperature is ${temperature} degrees celsius`}>
+        {temperature}<span className={styles.celsiusBig} aria-hidden="true"></span>
       </div>
-      <div className={styles.weather}>{condition}</div>
-    </main>
+      <div className={styles.weather} role="status" aria-label={`Weather condition is ${condition}`}>
+        {condition}
+      </div>
+    </div>
   );
 };

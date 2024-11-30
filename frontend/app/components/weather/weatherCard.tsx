@@ -10,9 +10,19 @@ interface WeatherCardProps {
 }
 
 const WeatherCard = ({ data }: WeatherCardProps) => {
+  const locationLabel = `Weather for ${data.location.name}, ${data.location.country}`;
+
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
+    <div
+      className={styles.container}
+      role="region"
+      aria-label="Weather information"
+    >
+      <div
+        className={styles.card}
+        role="complementary"
+        aria-label={locationLabel}
+      >
         <WeatherHeader
           city={data.location.name}
           country={data.location.country}
