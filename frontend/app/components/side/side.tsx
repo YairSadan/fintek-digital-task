@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./side.module.css";
-import Logo from "../logo";
 import { WeatherData } from "@/app/types";
 interface SideProps {
   setWeatherData: (data: WeatherData) => void;
@@ -22,9 +21,6 @@ const Side = ({ setWeatherData }: SideProps) => {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>
-        <Logo />
-      </div>
       <div className={styles.prompt}>
         Use our weather app to see the weather around the world
       </div>
