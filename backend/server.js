@@ -3,9 +3,14 @@ import weather from "./routes/weather.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
+import cors from "cors";
+
 const port = process.env.PORT || 8000;
 
 const app = express();
+
+// CORS middleware
+app.use(cors({ origin: "http://localhost:3000" }));
 
 // Body parser middleware
 app.use(express.json());
